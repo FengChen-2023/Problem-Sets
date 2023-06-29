@@ -1,5 +1,7 @@
-class Solution {
-    public ListNode middleNode(ListNode head) {
+class Solution
+{
+    public ListNode middleNode( ListNode head )
+    {
         ListNode curr = head;
         ListNode mid = head;
 
