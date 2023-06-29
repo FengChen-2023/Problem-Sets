@@ -1,5 +1,7 @@
-class Solution {
-    public boolean canConstruct(String ransomNote, String magazine) {
+class Solution
+{
+    public boolean canConstruct( String ransomNote, String magazine )
+    {
         int len1 = ransomNote.length();
         int len2 = magazine.length();
 
