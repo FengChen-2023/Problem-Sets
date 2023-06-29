@@ -1,5 +1,7 @@
-class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+class Solution
+{
+    public void merge( int[] nums1, int m, int[] nums2, int n )
+    {
         int i = m-- + --n;
         
         while ( m >= 0 && n >= 0 )
