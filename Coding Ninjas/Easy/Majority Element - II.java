@@ -1,12 +1,11 @@
 import java.io.*;
 import java.util.* ;
 
-import java.util.ArrayList;
 import java.util.stream.*;
 
 public class Solution 
 {	
-	public static ArrayList<Integer> majorityElementII(ArrayList<Integer> arr) 
+	public static ArrayList<Integer> majorityElementII( ArrayList<Integer> arr ) 
 	{
 		Integer min = arr.size() / 3;
 		HashMap<Integer, Integer> map = new HashMap<>();
@@ -19,6 +18,6 @@ public class Solution
 			}
 		}
 
-		return map.entrySet().stream().filter( (entry) -> entry.getValue() > min ).map( Map.Entry::getKey ).collect( Collectors.toCollection( ArrayList::new ) );
+		return map.entrySet().stream().filter( ( entry ) -> entry.getValue() > min ).map( Map.Entry::getKey ).collect( Collectors.toCollection( ArrayList::new ) );
 	}
 }
