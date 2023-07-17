@@ -1,51 +1,41 @@
 class Solution
 {
-    public ListNode addTwoNumbers( ListNode l1, ListNode l2 )
-    {
-        ArrayList<Integer> x = new ArrayList<>();
-        ArrayList<Integer> y = new ArrayList<>();
+	public ListNode addTwoNumbers( ListNode l1, ListNode l2 )
+	{
+		ArrayDeque<Integer> x = new ArrayDeque<>();
+		ArrayDeque<Integer> y = new ArrayDeque<>();
 
-        while ( l1 != null )
-        {
-            x.add( l1.val );
-            l1 = l1.next;
-        }
+		while ( l1 != null )
+		{
+			x.addFirst( l1.val );
+			l1 = l1.next;
+		}
 
-        while ( l2 != null )
-        {
-            y.add( l2.val );
-            l2 = l2.next;
-        }
+		while ( l2 != null )
+		{
+			y.addFirst( l2.val );
+			l2 = l2.next;
+		}
 
-        int m = x.size();
-        int n = y.size();
-        int o = 0;
-        int p = 0;
-        ListNode ans = null;
-        
-        for ( int i = 1; i <= Math.max( m, n ); i++ )
-        {
-            o = p;
+		int z = 0;
+		ListNode ans = null;
 
-            if ( i <= m )
-            {
-                o += x.get( m - i );
-            }
-            
-            if ( i <= n )
-            {
-                o += y.get( n - i );
-            }
+		while ( !( x.isEmpty() && y.isEmpty() )  || z > 0)
+		{
+			if ( !x.isEmpty() )
+			{
+				z += x.pop();
+			}
 
-            ans = new ListNode( o % 10, ans );
-            p = o / 10;
-        }
+			if ( !y.isEmpty() )
+			{
+				z += y.pop();
+			}
 
-        if ( o >= 10 )
-        {
-            ans = new ListNode( p, ans );
-        }
+			ans = new ListNode( z % 10, ans );
+			z /= 10;
+		}
 
-        return ans;
-    }
+		return ans;
+	}
 }
